@@ -14,7 +14,7 @@ public class EntryProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
-    @Value("${cloudkarafka.topic}")
+    @Value("${cloudkarafka.entriesTopic}")
     private String topic;
 
     EntryProducer(KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {

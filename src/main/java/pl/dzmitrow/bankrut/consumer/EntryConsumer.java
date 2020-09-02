@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 class EntryConsumer {
 
-    @KafkaListener(topics = "${cloudkarafka.topic}")
+    @KafkaListener(topics = "${cloudkarafka.entriesTopic}")
     public void processMessage(String message,
                                @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
                                @Header(KafkaHeaders.RECEIVED_TOPIC) List<String> topics,
