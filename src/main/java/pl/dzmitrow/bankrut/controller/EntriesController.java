@@ -8,9 +8,9 @@ import pl.dzmitrow.bankrut.model.Entry;
 import pl.dzmitrow.bankrut.model.api.EntryDTO;
 import pl.dzmitrow.bankrut.producer.EntryProducer;
 
-import java.util.List;
+import java.util.Collections;
 
-@RestController
+@RestController("/entries")
 public class EntriesController {
 
     private final EntryProducer entryProducer;
@@ -19,15 +19,15 @@ public class EntriesController {
         this.entryProducer = producer;
     }
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello";
-    }
-
-    @PostMapping(value = "/entry", consumes = "application/json")
+    @PostMapping(consumes = "application/json")
     public void createEntry(@RequestBody EntryDTO entry) {
         Entry entry2 = new Entry(entry.getDescription(), "mua", entry.getTags());
         entryProducer.send(entry2);
+    }
+
+    @GetMapping(produces = "application/json")
+    public Entry getEntries() {
+        return new Entry("Asd", "mua", Collections.singletonList("tag"));
     }
 
 }
