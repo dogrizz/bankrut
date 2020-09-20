@@ -1,4 +1,4 @@
-package pl.dzmitrow.bankrut.producer;
+package pl.dzmitrow.bankrut.topic.producer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

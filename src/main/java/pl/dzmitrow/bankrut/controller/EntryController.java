@@ -3,17 +3,17 @@ package pl.dzmitrow.bankrut.controller;
 import org.springframework.web.bind.annotation.*;
 import pl.dzmitrow.bankrut.model.Entry;
 import pl.dzmitrow.bankrut.model.api.EntryDTO;
-import pl.dzmitrow.bankrut.producer.EntryProducer;
+import pl.dzmitrow.bankrut.topic.producer.EntryProducer;
 
 import java.util.Collections;
 
 @RestController
-@RequestMapping("/entries")
-public class EntriesController {
+@RequestMapping("/entry")
+public class EntryController {
 
     private final EntryProducer entryProducer;
 
-    EntriesController(EntryProducer producer) {
+    EntryController(EntryProducer producer) {
         this.entryProducer = producer;
     }
 
