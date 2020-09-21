@@ -14,7 +14,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private static final String[] ALLOWED_PATHS = new String[]{ "/home", "/webjars/**", "/register", "/register/submit", "/login"};
+    private static final String[] ALLOWED_PATHS = new String[]{"/home", "/webjars/**", "/static/**", "/register", "/register/submit", "/login"};
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

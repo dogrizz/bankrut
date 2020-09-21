@@ -14,10 +14,19 @@
 <div th:if="${param.registered}" class="alert alert-success">
     You have been registered.
 </div>
-<form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
+<div class="login_page">
+    <form th:action="@{/login}" method="post" class="form-signin text-center">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <img class="mb-4" th:src="@{/static/logo.png}" alt="" width="72" height="72">
+        <div class="form-group">
+            <label for="username" class="sr-only"> User Name :</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Login"/>
+        </div>
+        <div class="form-group">
+            <label for="password" class="sr-only"> Password:</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"/></div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+    </form>
+</div>
 </body>
 </html>
